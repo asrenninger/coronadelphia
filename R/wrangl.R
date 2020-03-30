@@ -191,6 +191,8 @@ timeseries <-
 
 pal <- read_csv("https://github.com/asrenninger/palettes/raw/master/turbo.txt", col_names = FALSE) %>% pull(X1)
 
+##
+
 anim <- 
   ggplot(data = timeseries) +
   geom_sf(data = background,
@@ -210,3 +212,28 @@ anim <-
 
 animate(anim, height = 785, width = 700, start_pause = 5, end_pause = 5)
 anim_save("test.gif", animation = last_animation())
+
+##
+
+befaft <-
+  combined %>%
+  mutate(visits = as.numeric(visits)) %>%
+  select(safegraph_place_id, date, visits) %>%
+  mutate(line = if_else(date < as_date('2020-03-15'), "before", "after")) %>%
+  group_by(safegraph_place_id, line) %>%
+  summarise(daily_visits = mean(visits, na.rm = TRUE)) %>%
+  ungroup() %>%
+  spread(line, daily_visits) %>%
+  replace_na(list(after = 0, before = 0)) %>%
+  left_join(places) %>%
+  st_as_sf() %>%
+  filter(!str_detect(top_category, "Related")) %>%
+  select(location_name, top_category, before, after) %>%
+  mutate(top_category = str_remove_all(top_category, " (Alcoholic Beverages)")) %>%
+  rename(cateogry = top_category)
+
+##
+
+st_write(befaft, "beforeandafter.geojson")
+
+  
