@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset='utf-8' />
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <!-- CSS Imports -->
+    <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- <script src="../dist/leaflet-svg-shape-markers.min.js"></script> -->
+
+    <!-- Mapbox GL -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+  </head>
+
+  <body>
+
+    <!-- Map -->
+    <div id="map" class="map"></div>
+    <!-- Legend -->
+    <div class="legend"></div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+      <div id="intro">
+
+          <div id="sidebar_top">
+
+            <h1 class="title">
+                Food and drink in the time of coronavirus <br>
+            </h1>
+
+            <p class="text">
+                Philadelphia has over 4,000 restaurants and bars, receiving millions of visits and hundreds of thousands of unique visitors each year. The spread of the coronavirus in the region threatens these businesses. Here we look at a tumultunous month.
+            </p>
+
+          </div>
+
+          <div id= "sidebar-bottom">
+            <button class="button" id="previous">
+              Previous
+            </button>
+            <button class="button" id="next">
+              Next
+            </button>
+            <button class="button" id="explore">
+              Explore
+            </button>
+            <h2 id="data-attribution">
+              <!-- This embeds a link that opens in a new window (with the _blank)-->
+              <a id="data-link" href="https://www.safegraph.com/" target="_blank">(Data provided by SafeGraph)</a>
+            </h2>
+          </div>
+
+      </div>
+
+    </div>
+
+    <!-- Javascript Imports -->
+    <script src="js/leaflet.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/jquery-2.2.0.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/slides.js"></script>
+
+  </body>
+</html>
