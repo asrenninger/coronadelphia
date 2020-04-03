@@ -15,7 +15,7 @@ var slides = [
   },
   {
     title: "Washington Square",
-    description: "Washington Square—and adjacent nieghborhoods—is more residential than commercial, and has a robust selection of restaurants that serve it. Some have adjusted service but all show fewer patrons since the state decree.",
+    description: "Washington Square—and adjacent nieghborhoods—is more residential than commercial, and has a robust selection of restaurants that serve it. Some have adjusted service but all show fewer patrons since the decree.",
     data: "Restaurant",
     xy: [39.947048, -75.152355],
     z: 16
