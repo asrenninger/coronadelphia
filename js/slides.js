@@ -8,14 +8,14 @@ var slides = [
   },
   {
     title: "Rittenhouse Square",
-    description: "In Rittehouse Square, the surrounding commercial and residential districts sustain numerous bars. Limited here to those that do not serve food, or at least not much in the way of food, these areas witnessed heavy losses as the virus set in.",
+    description: "Rittenhouse ",
     data: "Bar",
     xy: [39.949263, -75.175092],
     z: 16
   },
   {
     title: "Washington Square",
-    description: "Washington Square—and adjacent nieghborhoods—is more residential than commercial, and has a robust selection of restaurants that serve it. Some have adjusted service but all show fewer patrons since the decree.",
+    description: "another description",
     data: "Restaurant",
     xy: [39.947048, -75.152355],
     z: 16
