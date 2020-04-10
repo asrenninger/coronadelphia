@@ -8,7 +8,9 @@ var map = L.map('map', {
   zoomControl: true
 });
 
-var Hydda_Base = L.tileLayer('https://{s}.tile.openstreetmap.se/hydda/base/{z}/{x}/{y}.png', {
+// https://{s}.tile.openstreetmap.se/hydda/base/{z}/{x}/{y}.png
+
+var Hydda_Base = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
    attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
    minZoom: 0,
    maxZoom: 20,
@@ -22,7 +24,7 @@ legend.onAdd = function (map) {
   grades = ["Restaurant", "Bar", "Grocer", "Beer, Wine, Spirits shop"],
   labels = [];
 
-  // loop through our density intervals and generate a label with a colored square for each interval
+  // loop through the intervals and generate a label with a colored square for each interval
   for (var i = 0; i < grades.length; i++) {
     div.innerHTML +=
     '<i style="background:' + getColor(grades[i]) + '"></i> ' +
@@ -73,7 +75,7 @@ function getColor(c) {
 
 function getRadius(feature) {
   if (feature.properties.before - feature.properties.after <= 0) { return 0 }
-  else { return (feature.properties.before - feature.properties.after) / feature.properties.before };
+  else { return (feature.properties.before - feature.properties.after) / feature.properties.before }
 }
 
 function pointStyle(feature) {
@@ -152,10 +154,10 @@ var loadSlide = function(slide) {
 var next = function() {
   if (currentSlide == slides.length - 1) {
   } else {
-    $('#next').show()
-    $('#previous').show()
-    currentSlide = currentSlide + 1
-    loadSlide(slides[currentSlide])
+    $('#next').show();
+    $('#previous').show();
+    currentSlide = currentSlide + 1;
+    loadSlide(slides[currentSlide]);
   }
 
   if (currentSlide == slides.length - 1) {
@@ -166,15 +168,15 @@ var next = function() {
 
 var previous = function() {
   if (currentSlide == 0) {
-    location.reload()
+    location.reload();
   } else {
-    $('#next').show()
-    currentSlide = currentSlide - 1
-    loadSlide(slides[currentSlide])
+    $('#next').show();
+    currentSlide = currentSlide - 1;
+    loadSlide(slides[currentSlide]);
   }
 
   if (currentSlide == -1) {
-    $('#previous').hide()
+    $('#previous').hide();
   }
 
 };
